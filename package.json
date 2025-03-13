@@ -19,9 +19,11 @@
   },
   "homepage": "https://github.com/DevynJohnson/socialNetworkAPI#readme",
   "dependencies": {
+    "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "mongoose": "^8.12.1",
     "mongoose-time": "^0.1.0",
-    "mongoose-type-email": "^1.1.2"
+    "mongoose-type-email": "^1.1.2",
+    "typescript": "^5.8.2"
   }
 }

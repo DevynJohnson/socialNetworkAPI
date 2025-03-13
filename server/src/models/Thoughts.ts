@@ -1,4 +1,4 @@
-import { Schema, model, type Document } from 'mongoose';
+import { Schema, model, Types, Document } from 'mongoose';
 
 interface IThought extends Document {
     thoughtText: string;
@@ -6,6 +6,42 @@ interface IThought extends Document {
     username: string;
     reactions: string[];
 }
+
+interface IReaction extends Document {
+    reactionId: string;
+    reactionBody: string;
+    username: string;
+    createdAt: Date;
+}
+
+const ReactionSchema = new Schema<IReaction>(
+    {
+        reactionId: {
+            type: String,
+            default: () => new Types.ObjectId().toString()
+        },
+        reactionBody: {
+            type: String,
+            required: true,
+            maxlength: 280
+        },
+        username: {
+            type: String,
+            required: true
+        },
+        createdAt: {
+            type: Date,
+            default: Date.now,
+            get: (timestamp: Date | null | undefined): string => 
+                timestamp ? new Date(timestamp).toLocaleString('en-US', { timeZone: 'UTC' }) : ''
+        } as any
+    },
+    { 
+        timestamps: true, 
+        toJSON: { getters: true, virtuals: true }, 
+        toObject: { getters: true, virtuals: true } 
+    },
+);
 
 const ThoughtSchema = new Schema<IThought>(
     {
@@ -26,10 +62,7 @@ const ThoughtSchema = new Schema<IThought>(
             required: true
         },
         reactions: [
-            {
-                type: Schema.Types.ObjectId,
-                ref: 'Reaction'
-            }
+           ReactionSchema,
         ]
     },
     { 
