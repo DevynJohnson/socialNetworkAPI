@@ -2,9 +2,10 @@
   "name": "socialnetworkapi",
   "version": "1.0.0",
   "description": "An application designed to practice API routing, MongoDB, and mongoose in a fashion similar to popular social media applications.",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cd dist && node server.js"
   },
   "repository": {
     "type": "git",
@@ -13,7 +14,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/DevynJohnson/socialNetworkAPI/issues"
   },
@@ -25,5 +26,8 @@
     "mongoose-time": "^0.1.0",
     "mongoose-type-email": "^1.1.2",
     "typescript": "^5.8.2"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0"
   }
 }

@@ -1,5 +1,4 @@
 import { Schema, model, type Document } from 'mongoose';
-import Email from 'mongoose-type-email';
 
 interface IUser extends Document {
     username: string;
@@ -16,7 +15,8 @@ const UserSchema = new Schema<IUser>({
         trim: true
     },
     email: {
-        type: Email,
+        type: String,
+        match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please fill a valid email address'],
         required: true,
         unique: true,
     },

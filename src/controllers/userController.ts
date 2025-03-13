@@ -1,6 +1,5 @@
 import User from '../models/User.js';
-import { Router, Request, Response } from 'express';
-const router = Router();
+import { Request, Response } from 'express';
 
 
 // /api/users
