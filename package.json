@@ -21,6 +21,7 @@
   "dependencies": {
     "express": "^4.21.2",
     "mongoose": "^8.12.1",
+    "mongoose-time": "^0.1.0",
     "mongoose-type-email": "^1.1.2"
   }
 }
