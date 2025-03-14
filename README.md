@@ -17,12 +17,95 @@
 ![screenshot of insomnia](./src/images/insomniaScreenshot.png)
             
 ## Usage
-<p>This application was practice for building the backend functions of a social media network by starting a server, connecting to a MongoDB database, and performing CRUD operations to interact with that database by creating, updating, finding and deleting users, thoughts and reactions to those thoughts.</p>
-            
+<p>This application was practice for building the backend functions of a social media network by starting a server, connecting to a MongoDB database, and performing CRUD operations to interact with that database by creating, updating, finding and deleting users, thoughts and reactions to those thoughts. The routes being tested are listed below. The server is defaulted to run at http://localhost:3001/ - adjust as necessary if using a different port.</p>
+
+<h2>/api/users/</h2>
+<ul>
+<li>POST request - Create new user. Must be sent with JSON body data of username and email, for example:
+
+``` JSON
+    {
+    "username": "User",
+    "email": "account@email.com"
+    }
+```
+</li>
+<li>GET request - View all users</li>
+</ul>
+
+<h2>/api/users/:userId</h2>
+<p>:userId is the unique _id assigned to each user upon creation. It is returned in the GET request to view all user information.</p>
+<ul>
+<li>GET request - View user with _id of userId</li>
+<li>DELETE request - Delete user with _id of userId</li>
+<li>PUT request - Update user data. Must be send with JSON body data of the new username and/or email, for example:
+
+``` JSON
+    {
+    "username": "UpdatedUser",
+    "email": "UpdatedAccount@email.com"
+    }
+```
+</li>
+</ul>
+
+<h2>/api/users/:userId/friends/:friendId</h2>
+<p>userId is the _id of the user adding a friend, and friendId is the _id of the user they are adding as a friend
+<ul>
+<li>POST request - Add friend to friends list</li>
+<li>DELETE request - Delete friend from friends list</li>
+</ul>
+
+<p>/api/thoughts/</p>
+<ul>
+<li>GET request - View all thoughts</li>
+<li>POST request - Create new thought. Must be sent with JSON body data containing thoughtText, username, and user_id. For example:
+
+``` JSON
+{
+    "thoughtText": "Your thought here.",
+    "username": "User",
+    "user_id": "Use _id obtained from /api/users GET request"
+}
+```
+</li>
+</ul>
+
+<h2>/api/thoughts/:thoughtId</h2>
+<p>:thoughtId is the unique _id assigned to each thought, it can be found in the data returned by the GET request to view all thoughts
+<ul>
+<li>GET request - View thought</li>
+<li>DELETE request - Delete thought</li>
+<li>PUT request - Update thought text. Must be sent with JSON body containing the new thoughtText, for example:
+
+``` JSON
+{
+    "thoughtText": "Insert the text you would like the thought to be updated to here."
+}
+```
+
+</li>
+</ul>
+
+<h2>/api/thoughts/:thoughtId/reactions/:reactionId</h2>
+<p>reactionId is the unique _id assigned to each reaction. This can be found by viewing the data returned in the GET request for the associated thought.</p>
+<ul>
+<li>DELETE request - Delete reaction</li>
+<li>POST request - Create reaction. Must be sent with JSON body with the reaction text, for example:
+
+``` JSON
+{
+    "reaction": "This is my reaction!"
+}
+```
+
+</li>
+</ul>
+
 ## Credits
 
 ### Author
-<p>Devyn Johnson | <a href="https://github.com/DevynJohnson">Github Profile</a></p>
+<p>Devyn Johnson | <a href="https://github.com/DevynJohnson">Github Profile</a> | <a href="https://devynjohnsonportfolio.netlify.app/"> Portfolio</a></p>
         
 ### Collaborators and Contribution Instructions
 
