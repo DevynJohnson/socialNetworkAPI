@@ -14,7 +14,7 @@
 ## Installation
 <p>In order to utilize this application, you need to install Node.js, MongoDB, and software to test API routes such as Insomnia or Postman.</p>
 
-![screenshot of insomnia](URL "src/images/insomniaScreenshot.png")
+![screenshot of insomnia](./src/images/insomniaScreenshot.png)
             
 ## Usage
 <p>This application was practice for building the backend functions of a social media network by starting a server, connecting to a MongoDB database, and performing CRUD operations to interact with that database by creating, updating, finding and deleting users, thoughts and reactions to those thoughts.</p>
