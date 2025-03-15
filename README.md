@@ -88,11 +88,8 @@
 
 </li>
 </ul>
-
-<h2>/api/thoughts/:thoughtId/reactions/:reactionId</h2>
-<p>reactionId is the unique _id assigned to each reaction. This can be found by viewing the data returned in the GET request for the associated thought.</p>
+<h2>/api/thoughts/:thoughtId/reactions/</h2>
 <ul>
-<li>DELETE request - Delete reaction</li>
 <li>POST request - Create reaction. Must be sent with JSON body with the reaction text, for example:
 
 ``` JSON
@@ -102,6 +99,13 @@
 ```
 
 </li>
+</ul>
+
+<h2>/api/thoughts/:thoughtId/reactions/:reactionId</h2>
+<p>reactionId is the unique _id assigned to each reaction. This can be found by viewing the data returned in the GET request for the associated thought.</p>
+<ul>
+<li>DELETE request - Delete reaction</li>
+
 </ul>
 
 ## Credits
