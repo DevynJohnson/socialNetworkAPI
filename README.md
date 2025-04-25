@@ -111,7 +111,7 @@
 ## Credits
 
 ### Author
-<p>Devyn Johnson | <a href="https://github.com/DevynJohnson">Github Profile</a> | <a href="https://devynjohnsonportfolio.netlify.app/"> Portfolio</a></p>
+<p>Devyn Johnson | <a href="https://github.com/DevynJohnson">Github Profile</a> | <a href="https://devynjohnson.me"> Portfolio</a></p>
         
 ### Collaborators and Contribution Instructions
 
